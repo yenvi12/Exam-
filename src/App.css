@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap'); /* Nhập font Poppins */
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-title {
+  font-family: 'Lora', serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-brand {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center; /* Căn giữa chữ theo chiều dọc */
+  margin-bottom: 0; /* Đảm bảo không có khoảng cách thừa */
+}
+
+.navbar-nav {
+  align-items: center; /* Đảm bảo các mục trong navbar cũng căn giữa theo chiều dọc */
+}
+
+.navbar-dark {
+  background-color: #333;
+}
+
+.carousel-inner img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.full-width {
+  width: 100%;
+  display: block; 
+  color: #333;
+}
+
+.image-container {
+  position: relative;
+}
+
+.badge-sell {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(233, 175, 1);
+  color: white;
+  padding: 5px 30px;
+  font-size: 16px; /* Chỉnh kích thước font chữ */
+  font-weight: 600; /* Đậm nét nhưng không quá nặng */
+  font-family: 'Poppins', sans-serif; /* Font chữ Poppins */
+  border-radius: 2px;
+  z-index: 10;
+  text-transform: uppercase; /* Viết hoa toàn bộ */
+  letter-spacing: 1px; /* Tăng khoảng cách giữa các ký tự */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Thêm bóng chữ */
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+/* Button Styles */
+.btn-hover {
+  background-color: #b38ef2; /* Primary color */
+  color: #000; /* Black text */
+  font-weight: bolder;
+  width: 208px;
+  height: 50px;
+  border-radius: 25px; /* More natural, rounded shape */
+  border: 2px solid #000; /* Add a black border */
+  font-size: 18px; /* Increase text size */
+  text-align: center;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  display: inline-block; /* Ensure proper block layout */
+}
+
+/* Hover Effect */
+.btn-hover:hover {
+  background-color: #a77de0; /* Darker shade on hover */
+  color: #fff; /* White text on hover */
+  border-color: #fff; /* White border on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow for effect */
+  transform: translateY(-3px); /* Slightly move up on hover */
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: scale(1.05); /* Increase card size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Table for Purchases Section (Cart) */
+.purchases-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.purchases-table th,
+.purchases-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #495057;
+  background-color: #495057;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.purchases-table th {
+  background-color: #212529;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.purchases-table td {
+  background-color: #343a40;
+}
+
+.purchases-table tbody tr:hover {
+  background-color: #3a3f44;
+}
+
+.quantity-controls button {
+  background-color: #f8d210;
+  border: none;
+  color: #343a40;
+  font-size: 18px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.quantity-controls button:hover {
+  background-color: #f39c12;
+}
+
+/* Cart Popup Styles */
+.cart-popup {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #343a40;
+  color: white;
+  border: 1px solid #f8d210;
+  padding: 20px;
+  z-index: 1000; /* Đảm bảo cart hiển thị trên các phần tử khác */
 }
